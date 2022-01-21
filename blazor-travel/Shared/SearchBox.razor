@@ -1,0 +1,55 @@
+<div id="search">
+    <img src="/images/title5.gif" alt="" width="119" height="22"/><br/><br/>
+    <p>
+        <span class="pad">
+            <strong>Destination</strong>
+        </span><strong>Cruise Line</strong>
+    </p>
+    <p class="pad2">
+        <select width="170" id="destination">
+            @if (Destinations != null && Destinations.Any())
+            {
+                @foreach (var destination in Destinations.OrderBy(c => c.SortOrder))
+                {
+                    <option value="@destination.RegionId">@destination.ListingName</option>
+                }   
+            }
+        </select>
+        <select width="170" id="cruiseLine">
+            @if (CruiseLines != null && CruiseLines.Any())
+            {
+                @foreach (var cruiseLine in CruiseLines.OrderBy(c => c.SortOrder))
+                {
+                    <option value="@cruiseLine.CruiseLineId">@cruiseLine.Name</option>
+                }
+            }
+        </select>
+    </p>
+    <p>
+        <span class="pad4">
+            <strong>Departure Date</strong>
+        </span><strong>Length</strong>
+    </p>
+    <p class="pad2">
+        <select width="170" id="departure">
+            @if (DepartureDates != null && DepartureDates.Any())
+            {
+                @foreach (var departureDate in DepartureDates)
+                {
+                    <option value="@departureDate">@departureDate</option>
+                }   
+            }
+        </select>
+        <select width="170" id="cruiseLength">
+            <option value="Any" selected>Any</option>
+            <option value="LessThree">1 - 3 Nights</option>
+            <option value="FourSeven">4 - 7 Nights</option>
+            <option value="EightPlus">8+ Nights</option>
+        </select>
+    </p>
+    <p class="pad3">
+        <span>
+            <input type="image" src="/images/button.gif" value="search"/>
+        </span>
+    </p>
+</div>

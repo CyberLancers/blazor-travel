@@ -1,0 +1,13 @@
+@if (CruiseLines != null && CruiseLines.Any())
+{
+    <h4 class="title2">Top Cruise Lines</h4>
+    <ul>
+        @foreach (var cruiseLine in CruiseLines)
+        {
+            <li>
+                <a href="/results/cruiseline/@cruiseLine.Name">@cruiseLine.Name</a>
+            </li>
+        }
+    </ul>
+    <a href="#" class="more"></a>
+}

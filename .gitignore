@@ -1,0 +1,6 @@
+/Api/obj/*
+/blazor-travel/obj/*
+/Shared/obj/*
+/Api/bin/*
+/blazor-travel/bin/*
+/Shared/bin/*
