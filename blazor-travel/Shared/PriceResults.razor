@@ -1,0 +1,71 @@
+<div>
+	<div class="cabinDetailsTitle1">
+		
+	</div>
+	<div class="cabinTitle2">
+		<br />
+		Inside Cabin
+	</div>
+	<div class="cabinTitle2">
+		<br />
+		Ocean View
+	</div>
+	<div class="cabinTitle2">
+		<br />
+		Balcony
+	</div>
+	<div class="cabinTitle2">
+		<br />
+		Suite
+	</div>
+</div>
+<div class="lineDivider">
+</div>
+<div>
+	<div>
+		<div class="cabinPromotions" style="background-image: url('/images/spacer.gif');">
+
+		</div>
+	</div>
+	<div class="cabinTypePrice">
+		<div class="cabinTypePriceFrom">from&nbsp;</div>
+		<span class="cabinTypePriceText">@InsideRate?.ToString("C")</span>&nbsp; <span>/person</span>
+		<div>
+			<span class="textBold">@InsideRatePerson?.ToString("C")</span>&nbsp; <span>/night</span>
+		</div>
+	</div>
+	<div class="cabinTypePrice">
+		<div class="cabinTypePriceFrom">from&nbsp;</div>
+        		<span class="cabinTypePriceText">@OutsideRate?.ToString("C")</span>&nbsp; <span>/person</span>
+        		<div>
+        			<span class="textBold">@OutsideRatePerson?.ToString("C")</span>&nbsp; <span>/night</span>
+        		</div>
+	</div>
+	<div class="cabinTypePrice">
+		<div class="cabinTypePriceFrom">from&nbsp;</div>
+        		<span class="cabinTypePriceText">@BalconyRate?.ToString("C")</span>&nbsp; <span>/person</span>
+        		<div>
+        			<span class="textBold">@BalconyRatePerson?.ToString("C")</span>&nbsp; <span>/night</span>
+        		</div>
+	</div>
+	<div class="cabinTypePrice">
+		<div class="cabinTypePriceFrom">from&nbsp;</div>
+        		<span class="cabinTypePriceText">@SuiteRate?.ToString("C")</span>&nbsp; <span>/person</span>
+        		<div>
+        			<span class="textBold">@SuiteRatePerson?.ToString("C")</span>&nbsp; <span>/night</span>
+        		</div>
+	</div>
+	<div class="cabinPriceRow">
+		<div class="cabinSelect">
+			@if (!IsGraph)
+			{
+				<a href="/details/@Itinerary?.ItineraryId">Price Chart</a>
+			}
+		</div>
+	</div>
+	<div class="lineDivider">
+	</div>
+	<div class="clear">
+	</div>
+	<br clear="all" />
+</div>

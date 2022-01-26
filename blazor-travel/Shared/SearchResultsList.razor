@@ -1,0 +1,75 @@
+@if (!IsGraph)
+{
+	<SearchResultsPaging CurrentPage="CurrentPage" TotalPages="TotalPages" TotalPerPage="TotalPerPage" OnNumberResultsChanged="NumberResultsChanged" OnPageChanged="PageChanged"/>
+}
+
+@if (!string.IsNullOrEmpty(Message))
+{
+	<div style="padding-top: 10px; padding-bottom: 10px; color: Red; text-align: center">
+		@Message
+	</div>
+}
+
+@foreach (var searchResult in Itineraries)
+{
+	<div class="resultsWrapper">
+			<div class="resultsWrapperContent">
+				<div class="resultsWrapperContentRight">
+					<div class="resultsLogo">
+						<img src="/images/cruiselines/@searchResult.CruiseLineImageUrl"/>
+					</div>
+				</div>
+				<div class="resultsWrapperContentLeft">
+					<div class="shipPic">
+						<img src="/images/ships/@searchResult.ShipImageUrl" class="imgBorder" width="150" height="100"/>
+					</div>
+					<div class="resultsDetails">
+						<div class="resultsWrapperTitle">
+							<span class="resultsContainerTitleText">@searchResult.Title</span>
+						</div>
+						<div class="resultsDetailsTitle">
+							<span class="textBold">Cruise Ship:</span>
+						</div>
+						<div class="resultsDetailsInfo">
+							<span>@searchResult.ShipName</span>
+						</div>
+						<div class="resultsDetailsTitle">
+							<span class="textBold">Departures:</span><br />
+						</div>
+						<div class="resultsDetailsInfo">
+							<span class="resultsContainerTitleText">@searchResult.DateStart.ToString("d")</span><br />
+						</div>
+						<div class="resultsDetailsTitle">
+							<span class="textBold">Ports of Call:</span>
+						</div>
+						<div class="resultsDetailsInfo">
+							<span>@searchResult.Destinations</span>
+						</div>
+						<div class="resultsDetailsTitle">
+							<span class="textBold">Details:</span>
+						</div>
+						<div class="resultsDetailsInfo">
+							@if (!IsGraph)
+							{
+								<a href="/results/@searchResult.ItineraryId">Price Chart</a>
+							}
+						</div>
+					</div>
+				</div>
+				<br />
+				<div class="clear">
+				</div>
+				<div class="resultsBottomLeft" style="display: none;">
+				</div>
+				<PriceResults Itinerary="searchResult" IsGraph="IsGraph"/>
+			</div>
+		</div>
+		<div class="clear">
+			&nbsp;
+		</div>
+}
+
+@if (!IsGraph)
+{
+	<SearchResultsPaging CurrentPage="CurrentPage" TotalPages="TotalPages" TotalPerPage="TotalPerPage" OnNumberResultsChanged="NumberResultsChanged" OnPageChanged="PageChanged"/>
+}

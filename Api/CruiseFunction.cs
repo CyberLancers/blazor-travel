@@ -15,27 +15,7 @@ namespace BlazorAssemblyTravel.Api
         {
             this.cruiseService = cruiseService;
         }
-        
-        [FunctionName("CruiseDeals")]
-        public async Task<IActionResult> GetCruiseDeals(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
-            ILogger log)
-        {
-            var cruiseDeals = await cruiseService.GetCruiseDeals();
 
-            return new OkObjectResult(cruiseDeals);
-        }
-        
-        [FunctionName("CruiseLines")]
-        public async Task<IActionResult> GetCruiseLines(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,
-            ILogger log)
-        {
-            var cruiseLines = await cruiseService.GetCruiseLines();
-
-            return new OkObjectResult(cruiseLines);
-        }
-        
         [FunctionName("Destinations")]
         public async Task<IActionResult> GetDestinations(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = null)] HttpRequest req,

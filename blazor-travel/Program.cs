@@ -1,12 +1,18 @@
-﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
+﻿using Business.Data;
+using Business.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["API_Prefix"]) });
+
+builder.Services.AddDbContextFactory<CruisePriceWatchContext>(options =>
+    options.UseSqlServer(configuration.GetConnectionString("CruisePriceWatchContext")));
+        
+builder.Services.AddScoped<ICruiseService, CruiseService>();
 
 var app = builder.Build();
 
@@ -23,6 +29,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseRequestLocalization("en-US");
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");

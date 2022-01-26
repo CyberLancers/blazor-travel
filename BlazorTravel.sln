@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "blazor-travel", "blazor-tra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{273A9137-150E-4BA5-B6FF-C775A6D3A845}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{1291AD29-141B-42FB-A6FA-967D94470A12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{721E34E7-120F-44DF-8E92-3FCD08405866}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +20,9 @@ Global
 		{273A9137-150E-4BA5-B6FF-C775A6D3A845}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{273A9137-150E-4BA5-B6FF-C775A6D3A845}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{273A9137-150E-4BA5-B6FF-C775A6D3A845}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1291AD29-141B-42FB-A6FA-967D94470A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1291AD29-141B-42FB-A6FA-967D94470A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1291AD29-141B-42FB-A6FA-967D94470A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1291AD29-141B-42FB-A6FA-967D94470A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{721E34E7-120F-44DF-8E92-3FCD08405866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{721E34E7-120F-44DF-8E92-3FCD08405866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{721E34E7-120F-44DF-8E92-3FCD08405866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{721E34E7-120F-44DF-8E92-3FCD08405866}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

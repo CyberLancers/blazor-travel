@@ -1,0 +1,14 @@
+@page "/Results/CruiseLine/{cruiseLineName}"
+
+<div id="content">
+    <div id="main">
+        <p>
+            <span>@Title</span> &raquo; <span>@DateRange</span>
+        </p>
+        <span class="contentTitle">@Title</span><br/>
+        <SearchResultsList SearchCriteria="criteria"/>
+    </div>
+    <div id="sidebar">
+        @* <FilterCriteria/> *@
+    </div>
+</div>

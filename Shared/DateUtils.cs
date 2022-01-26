@@ -14,4 +14,14 @@ public static class DateUtils
 
         return dateList;
     }
+    
+    public static DateTime GetStartOfMonth(DateTime date)
+    {
+        return new DateTime(date.Year, date.Month, 1);
+    }
+
+    public static DateTime GetEndOfMonth(DateTime date)
+    {
+        return new DateTime(date.Year, date.Month, 1).AddMonths(1).AddDays(-1);
+    }
 }

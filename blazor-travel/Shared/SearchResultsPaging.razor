@@ -1,0 +1,31 @@
+@using Microsoft.Data.SqlClient
+
+<div class="pagination">
+    <div class="paginationCurrentPage">
+        Page {@CurrentPage} of {@TotalPages}
+    </div>
+    <div class="paginationDisplayResults">
+        Results per page
+        <select class="formElementSmall" @onchange="NumberResultsChanged">
+            <option value="10" selected>10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+    <div class="paginationPages">
+        <input type="image" class="buttonPageRewind" src="/images/spacer.gif" alt="First page" @onclick="FirstClicked"/>
+        <input type="image" class="buttonPageBack" src="/images/spacer.gif" alt="First page" @onclick="PreviousClicked"/>
+        @for (int idx = 1; idx <= TotalPages; idx++)
+        {
+            var page = idx;
+            @if (idx > 1)
+            {
+                <span> | </span>
+            }
+            <span class="@(idx == @CurrentPage ? "pageBold" : "linkDefault")" @onclick="() => PageClicked(page)">@idx</span>
+        }
+        <input type="image" class="buttonPageForward" src="/images/spacer.gif" alt="First page" @onclick="NextClicked"/>
+        <input type="image" class="buttonPageLast" src="/images/spacer.gif" alt="First page" @onclick="LastClicked"/>
+    </div>
+</div>
